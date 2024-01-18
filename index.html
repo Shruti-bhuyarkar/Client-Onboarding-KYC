@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <!-- <a href="#" class="logo"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Grocery</a> -->
+    <nav class="navbar"> 
+        <a href="index.html">Personal Details</a> 
+        <a href="Address.html">Address</a>
+        <a href="phone.html">Phone</a>
+    </nav> 
+  </header>
+    <div class="form-container">
+        <div class="form-page active-page" id="page1">
+            <i class="fa-solid fa-info"></i>
+            <h2>Personal Details</h2>
+            <div class="fields">
+              <div class="input-field">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+              </div>
+              <div class="input-field">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="input-field">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+              </div>
+
+              <div class="input-field">
+                <label for="maritalStatus">Marital Status:</label>
+                <select id="maritalStatus" name="maritalStatus" required>
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="others">Others</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label for="spouseName">Name of Spouse:</label>
+                <input type="text" id="spouseName" name="spouseName">
+              </div>
+
+              <div class="input-field">
+                <label for="dependents">Number of Dependents:</label>
+                <input type="number" id="dependents" name="dependents" min="0">
+              </div>
+
+              <div class="input-field">
+                <label for="children">Number of Children:</label>
+                <input type="number" id="children" name="children" min="0">
+              </div>
+            
+              <div class="input-field">
+                <label for="fatherName">Name of Father:</label>
+                <input type="text" id="fatherName" name="fatherName">
+              </div>
+
+              <div class="input-field">
+                <label for="nationality">Nationality:</label>
+                  <select id="nationality" name="nationality" required>
+                      <option value="us">Indian</option>
+                      <option value="other">Other</option>
+                  </select>
+              </div>
+
+              <div class="input-field">
+                <label for="religion">Religion:</label>
+                <select id="religion" name="religion" required>
+                    <option value="hindu">Hindu</option>
+                    <option value="muslim">Muslim</option>
+                    <option value="christian">Christian</option>
+                    <option value="sikh">Sikh</option>
+                    <option value="jain">Jain</option>
+                    <option value="buddhist">Buddhist</option>
+                    <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="sc">SC</option>
+                    <option value="st">ST</option>
+                    <option value="obc">OBC</option>
+                    <option value="minority">Minority</option>
+                    <option value="others">Others</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label for="placeOfBirth">Place of Birth:</label>
+                <input type="text" id="placeOfBirth" name="placeOfBirth" required>
+              </div>
+
+              <div class="input-field">
+                <label for="aadhaarNumber">Aadhaar Number:</label>
+                <input type="text" id="aadhaarNumber" name="aadhaarNumber" pattern="[0-9]{12}" title="Please enter a 12-digit Aadhaar number" required>
+            </div>
+    
+            <!-- Add input field for Passport Number -->
+            <div class="input-field">
+                <label for="passportNumber">Passport Number:</label>
+                <input type="text" id="passportNumber" name="passportNumber" required>
+            </div>
+    
+            <!-- Add input field for PAN Number -->
+            <div class="input-field">
+                <label for="panNumber">PAN Number:</label>
+                <input type="text" id="panNumber" name="panNumber" pattern="[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}" title="Please enter a valid PAN number" required>
+            </div>
+
+            <div class="input-field">
+                <label for="voterID">Voter ID:</label>
+                <input type="text" id="voterID" name="voterID" required>
+            </div>
+              
+            
+              <div class="input-field">
+                <div id="minorityDetails" style="display: none;">
+                  <label for="minorityInfo">Details for Minority (if selected):</label>
+                  <input type="text" id="minorityInfo" name="minorityInfo">
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>
+
+          
+
+      
+
+    
+        <!-- <div class="form-page" id="page4">
+            <h2>Customer Declaration</h2>
+            
+            <button onclick="prevPage()">Previous</button>
+            <button onclick="submitForm()">Submit</button>
+        </div> -->
+        <button onclick="submitForm()">Submit</button>
+        <button ><a href="address.html">Address</a></button>
+        <section id="data-table">
+          <br>
+          <!-- <h2>Input Data Table</h2> -->
+          <table>
+              <thead>
+                  <tr>
+                      <th>Full Name</th>
+                      <th>Gender</th>
+                      <th>DOB</th>
+                      <th>Marital Status</th>
+                      <!-- <th>Name of Spouse</th> -->
+                      <th>Number of Dependents</th>
+                      <!-- <th>Number of Children</th> -->
+                      <th>Nationality</th>
+                      <!-- <th>Religion</th> -->
+                      <!-- <th>Category</th> -->
+                      <th>Aadhaar Number</th>
+                      <th>Pan Number</th>
+                      <th>Passport Number</th>
+                      <th>Voter ID</th>
+                  </tr>
+              </thead>
+              <tbody id="table-body"></tbody>
+          </table>
+      </section>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
