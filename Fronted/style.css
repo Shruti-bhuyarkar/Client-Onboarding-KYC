@@ -9,9 +9,7 @@ body {
     /* padding: 0 400px; */
 }
 
-.header .navbar a{
-    padding: 0 5px;
-}
+
 
 .form-container {
     /* max-width: 800px; */
@@ -86,11 +84,12 @@ input, select {
 }
 
 table, th,td {
-    border:1px solid black;
+    border:1px solid rgb(22, 21, 21);
+    
   }
 
   table{
-    width: 100%;
+    width: 100%;    
   }
 
 button {
