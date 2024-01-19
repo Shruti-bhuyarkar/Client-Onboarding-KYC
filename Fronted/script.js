@@ -1,3 +1,7 @@
+$(function(){
+    $("#index").load("index.html");
+});
+
 function submitForm() {
     var formData = {
         "Full Name": document.getElementById('fullName').value,
@@ -41,6 +45,13 @@ function resetForm() {
     document.getElementById('passportNumber').value = '';
     document.getElementById('panNumber').value = '';
     document.getElementById('voterID').value = '';
+    document.getElementById('spouseName').value = '';
+    document.getElementById('fatherName').value = '';
+    document.getElementById('children').value = '';
+    document.getElementById('religion').value = '';
+    document.getElementById('category').value = '';
+    document.getElementById('placeOfBirth').value = '';
+    document.getElementById('minorityInfo').value = '';
 }
 
 
