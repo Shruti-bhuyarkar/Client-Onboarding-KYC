@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Select Country State City Zip</h1>
+    <form class="dropdown-group">
+      <select id="Country" size="1">
+        <option value="" selected="selected">-- Select Country --</option>
+      </select>
+
+      <select id="State" size="1">
+        <option value="" selected="selected">-- Select State --</option>
+      </select>
+
+      <select id="City" size="1">
+        <option value="" selected="selected">-- Select City --</option>
+      </select>
+
+      <select id="Zip" size="1">
+        <option value="" selected="selected">-- Select Zip --</option>
+      </select>
+    </form>
+    <button class="btn btn-primary" type="submit" onclick="refreshData()">Submit</button>
+    <script src="main.js"></script>
+</body>
+</html>
