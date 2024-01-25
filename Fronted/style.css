@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e1bebe;
+    margin: 0;
+    padding: 20px;
+    /* background-color: rgb(149, 201, 201); */
+}
+.header .navbar {
+    /* padding: 0 400px; */
+}
+
+
+
+.form-container {
+    /* max-width: 800px; */
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.form-container .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.fields .input-field{
+    display: flex;
+    width: calc(100% / 4 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.input-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+
+
+.input-field input, select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+.form-page {
+    display: none;
+}
+
+.active-page {
+    display: block;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-check-input{
+    width: 10px;;
+}
+.form-group input{
+    padding: 4px 0;
+}
+
+table, th,td {
+    border:1px solid rgb(22, 21, 21);
+    
+  }
+
+  table{
+    width: 100%;    
+  }
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#minorityDetails {
+    margin-top: 10px;
+}

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="cities.js"></script>
+</head>
+<body>
+  <header class="header">
+  <nav class="navbar"> 
+    <a href="index.html">Personal Details</a> 
+    <a href="Address.html">Address</a>
+    <a href="phone.html">Phone</a>
+</nav>
+</header>
+<div class="form-container" id="page2">
+    <h2>Present Address</h2>
+    <div class="fields">
+    <div class="input-field">
+     <label for="residenceType">Type of Residence:</label>
+     <select id="presentResidenceType" name="residenceType" required>
+         <option value="owned">Owned</option>
+         <option value="rented">Rented</option>
+         <option value="allotted">Allotted to Employer</option>
+         <option value="others">Others</option>
+     </select>
+   </div>  
+   <div class="input-field"> 
+     <label for="houseNumber">House/Flat/Apartment No. or Name:</label>
+     <input type="text" id="presentHouseNumber" name="houseNumber" required>
+   </div>
+
+   <div class="input-field">
+     <label for="areaLocation">Area/Location:</label>
+     <input type="text" id="presentAreaLocation" name="areaLocation" required>
+   </div> 
+
+   <div class="input-field">
+     <label for="landmark">Landmark:</label>
+     <input type="text" id="presentLandmark" name="landmark">
+   </div>
+
+   <div class="input-field">
+     <label for="state">State:</label>
+     <select onchange="print_city('presentCity', this.selectedIndex);" id="presentState" name ="stt" class="form-control" required></select>
+    
+     <script language="javascript">print_state("presentState");</script>
+
+   </div> 
+
+   <div class="input-field">
+    <label for="city">City:</label>
+    <select id ="presentCity" class="form-control" required></select>
+   </div>
+
+ 
+   <div class="input-field">
+     <label for="pincode">PIN Code:</label>
+     <input id="presentPin" type="text" name="pin" pattern="[0-9]{6}" maxlength="6">
+   </div>  
+
+   <div class="input-field">
+     <label for="phone">Phone Number:</label>
+     <input id="presentPhone" type="text" name="phone" pattern="[0-9]{10}" maxlength="10">
+   </div>
+   
+   <div class="input-field">
+     <label for="email">Email:</label>
+     <input type="email" id="presentEmail" name="email" required>
+   </div>  
+
+
+
+
+   
+
+
+    </div>   
+
+
+    
+   
+    <label for="sameAsPermanent">Present Address Same as Permanent Address:</label>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault"  id="yesRadio">Yes
+        <!-- <label class="form-check-label" for="flexRadioDefault1">
+          Yes
+        </label> -->
+    </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="noRadio" checked>No
+        <!-- <label class="form-check-label" for="flexRadioDefault2">
+          No
+        </label> -->
+      </div>
+  
+    
+
+
+
+
+
+
+  
+
+
+  </div>
+
+
+
+  
+    
+   
+
+
+
+  <div class="form-container" id="page2">
+
+    <h2>Permanent Address</h2>
+    <div class="fields">
+    <div class="input-field">
+     <label for="residenceType">Type of Residence:</label>
+     <select id="residenceType" name="residenceType" required>
+         <option value="owned">Owned</option>
+         <option value="rented">Rented</option>
+         <option value="allotted">Allotted to Employer</option>
+         <option value="others">Others</option>
+     </select>
+   </div>  
+   <div class="input-field"> 
+     <label for="houseNumber">House/Flat/Apartment No. or Name:</label>
+     <input type="text" id="houseNumber" name="houseNumber" required>
+   </div>
+  
+   <div class="input-field">
+     <label for="areaLocation">Area/Location:</label>
+     <input type="text" id="areaLocation" name="areaLocation" required>
+   </div> 
+  
+   <div class="input-field">
+     <label for="landmark">Landmark:</label>
+     <input type="text" id="landmark" name="landmark">
+   </div>
+  
+   <div class="input-field">
+     <label for="state">State:</label>
+     <select onchange="print_city('city', this.selectedIndex);" id="state" name ="stt" class="form-control" required></select>
+     <script language="javascript">print_state("state");</script>
+   </div> 
+  
+  
+   <div  class="input-field">
+    <label for="city">City:</label>
+    <select id ="city" class="form-control" required></select>
+   </div>
+  
+  
+   <div class="input-field">
+     <label for="pincode">PIN Code:</label>
+     <input id="pin" type="text" name="pin" pattern="[0-9]{6}" maxlength="6">
+   </div>  
+  
+   <div class="input-field">
+     <label for="phone">Phone Number:</label>
+     <input id="phone" type="text" name="phone" pattern="[0-9]{10}" maxlength="10">
+   </div>
+   
+   <div class="input-field">
+     <label for="email">Email:</label>
+     <input type="email" id="email" name="email" required>
+   </div>  
+  </div>
+  
+    <button onclick="address()"><a href="index.html">Personal Details</a></button>
+    <button onclick="nextPage()">Next</button>
+
+    <section id="data-table">
+    <br>
+        <table>
+      <thead>
+          <tr>
+              <th>Type of Residence</th>
+              <th>Apartment No</th>
+              <th>Area</th>
+              <th>Landmark</th>
+              <!-- <th>Name of Spouse</th> -->
+              <th>State</th>
+              <!-- <th>Number of Children</th> -->
+              <th>City</th>
+              <!-- <th>Religion</th> -->
+              <!-- <th>Category</th> -->
+              <th>PIN Code</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+          </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+  </table>
+    </section>
+</body>
+</html>
+
+<script>
+  function address() {
+    var formData = {
+        "Type Of Residence": document.getElementById('presentResidenceType').value,
+        "Apartment No": document.getElementById('presentHouseNumber').value,
+        "Area": document.getElementById('presentAreaLocation').value,
+        "Landmark": document.getElementById('presentLandmark').value,
+        "State": document.getElementById('presentState').value,
+        "City": document.getElementById('presentCity').value,
+        "Pin": document.getElementById('presentPin').value,
+        "Phone Number": document.getElementById('presentPhone').value,
+        "Email": document.getElementById('presentEmail').value
+    };
+
+    addToTable(formData);
+    resetForm();  // Optionally reset the form after submission
+}
+
+function addToTable(formData) {
+    var tableBody = document.getElementById('table-body');
+    var newRow = document.createElement('tr');
+
+    for (var key in formData) {
+        var cell = document.createElement('td');
+        cell.textContent = formData[key];
+        newRow.appendChild(cell);
+    }
+
+    tableBody.appendChild(newRow);
+}
+
+function resetForm() {
+    // Reset each form field as needed
+    document.getElementById('presentResidenceType').value = '';
+    document.getElementById('presentHouseNumber').value = '';
+    document.getElementById('presentAreaLocation').value = '';
+    document.getElementById('presentLandmark').value = '';
+    document.getElementById('presentState').value = '';
+    document.getElementById('presentCity').value = '';
+    document.getElementById('presentPin').value = '';
+    document.getElementById('presentPhone').value = '';
+    document.getElementById('panNumber').value = '';
+    document.getElementById('presentEmail').value = '';
+}
+
+
+
+
+</script>
+
+
+
+<!-- for copying data -->
+<script>
+  function copyPresentAddress() {
+    var permanentFields = ["residenceType", "houseNumber", "areaLocation", "landmark", "state", "city", "pin", "phone", "email"];
+    var presentFields = ["presentResidenceType", "presentHouseNumber", "presentAreaLocation", "presentLandmark", "presentState", "presentCity", "presentPin", "presentPhone", "presentEmail"];
+
+    var yesRadio = document.getElementById("yesRadio");
+    console.log(yesRadio);
+    yesRadio.addEventListener("change", function () {
+        if (this.checked) {
+            for (var i = 0; i < permanentFields.length; i++) {
+                var permanentValue = document.getElementById(presentFields[i]).value.trim( );
+                console.log(permanentValue);
+                document.getElementById(permanentFields[i]).value = permanentValue;
+            }
+        }
+    });
+    console.log(document.getElementById('state').selectedIndex);
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+   
+    copyPresentAddress();
+});
+</script>

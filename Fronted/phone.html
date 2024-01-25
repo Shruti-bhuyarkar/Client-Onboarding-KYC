@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="phone-number-validation/build/css/demo.css">
+    <link rel="stylesheet" href="phone-number-validation/build/css/intlTelInput.css">
+    
+    
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar"> 
+          <a href="index.html">Personal Details</a> 
+          <a href="Address.html">Address</a>
+          <a href="phone.html">Phone</a>
+      </nav>
+    </header>
+    <div class="form-container">
+        <div class="form-page active-page" id="page3">
+            <h2>Phone</h2>
+            <i class="fa-solid fa-info"></i>
+            <div class="field">
+            <div class="input-field">
+                <label for="countryCode">Country Code:</label>
+                <input type="tel" id="phone" name="countryCode" pattern="\+\d{1,9}" maxlength="4">
+            </div>
+
+            <div class="input-field">
+                <label for="phoneType">Phone Type:</label>
+                <select id="phoneType" name="phoneType">
+                    <option value="personal">Personal</option>
+                    <option value="office">Office</option>
+                    <!-- Add more phone types as needed -->
+                </select>
+            </div>
+            
+            <div class="input-field">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10,15}" title="Please enter a valid phone number" required>
+                <!-- Use the "tel" type for better mobile keyboard support -->
+                <!-- The "pattern" attribute can be adjusted based on the expected format -->
+            </div>
+            
+        </div>
+
+        </div>
+    </div>
+    <script src="phone-number-validation/build/js/intlTelInput.js"></script>
+    <script>
+        var input=document.querySelector("#phone");
+        window.intlTelInput(input,{});
+    </script>
+</body>
+</html>
+
+
