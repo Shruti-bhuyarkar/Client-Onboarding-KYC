@@ -3,184 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-  <header class="header">
-    <!-- <a href="#" class="logo"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Grocery</a> -->
-    <nav class="navbar"> 
-        <a href="index.html">Personal Details</a> 
-        <a href="Address.html">Address</a>
-        <a href="phone.html">Phone</a>
-    </nav> 
-  </header>
-    <div class="form-container">
-        <div class="form-page active-page" id="page1">
-            <i class="fa-solid fa-info"></i>
-            <h2>Personal Details</h2>
-            <div class="fields">
-              <div class="input-field">
-                <label for="fullName">Full Name:</label>
-                <input type="text" id="fullName" name="fullName" required>
-              </div>
-              <div class="input-field">
-                <label for="gender">Gender:</label>
-                <select id="gender" name="gender" required>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
-              </div>
-              <div class="input-field">
-                <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob" required>
-              </div>
-
-              <div class="input-field">
-                <label for="maritalStatus">Marital Status:</label>
-                <select id="maritalStatus" name="maritalStatus" required>
-                    <option value="single">Single</option>
-                    <option value="married">Married</option>
-                    <option value="divorced">Divorced</option>
-                    <option value="others">Others</option>
-                </select>
-              </div>
-
-              <div class="input-field">
-                <label for="spouseName">Name of Spouse:</label>
-                <input type="text" id="spouseName" name="spouseName">
-              </div>
-
-              <div class="input-field">
-                <label for="dependents">Number of Dependents:</label>
-                <input type="number" id="dependents" name="dependents" min="0">
-              </div>
-
-              <div class="input-field">
-                <label for="children">Number of Children:</label>
-                <input type="number" id="children" name="children" min="0">
-              </div>
-            
-              <div class="input-field">
-                <label for="fatherName">Name of Father:</label>
-                <input type="text" id="fatherName" name="fatherName">
-              </div>
-
-              <div class="input-field">
-                <label for="nationality">Nationality:</label>
-                  <select id="nationality" name="nationality" required>
-                      <option value="us">Indian</option>
-                      <option value="other">Other</option>
-                  </select>
-              </div>
-
-              <div class="input-field">
-                <label for="religion">Religion:</label>
-                <select id="religion" name="religion" required>
-                    <option value="hindu">Hindu</option>
-                    <option value="muslim">Muslim</option>
-                    <option value="christian">Christian</option>
-                    <option value="sikh">Sikh</option>
-                    <option value="jain">Jain</option>
-                    <option value="buddhist">Buddhist</option>
-                    <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="input-field">
-                <label for="category">Category:</label>
-                <select id="category" name="category" required>
-                    <option value="sc">SC</option>
-                    <option value="st">ST</option>
-                    <option value="obc">OBC</option>
-                    <option value="minority">Minority</option>
-                    <option value="others">Others</option>
-                </select>
-              </div>
-
-              <div class="input-field">
-                <label for="placeOfBirth">Place of Birth:</label>
-                <input type="text" id="placeOfBirth" name="placeOfBirth" required>
-              </div>
-
-              <div class="input-field">
-                <label for="aadhaarNumber">Aadhaar Number:</label>
-                <input type="text" id="aadhaarNumber" name="aadhaarNumber" pattern="[0-9]{12}" title="Please enter a 12-digit Aadhaar number" required>
-            </div>
-    
-            <!-- Add input field for Passport Number -->
-            <div class="input-field">
-                <label for="passportNumber">Passport Number:</label>
-                <input type="text" id="passportNumber" name="passportNumber" required>
-            </div>
-    
-            <!-- Add input field for PAN Number -->
-            <div class="input-field">
-                <label for="panNumber">PAN Number:</label>
-                <input type="text" id="panNumber" name="panNumber" pattern="[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}" title="Please enter a valid PAN number" required>
-            </div>
-
-            <div class="input-field">
-                <label for="voterID">Voter ID:</label>
-                <input type="text" id="voterID" name="voterID" required>
-            </div>
-              
-            
-              <div class="input-field">
-                <div id="minorityDetails" style="display: none;">
-                  <label for="minorityInfo">Details for Minority (if selected):</label>
-                  <input type="text" id="minorityInfo" name="minorityInfo">
-                </div>
-              </div>
-              
-            </div>
-            
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="address.html">Address</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="phone.html">Phone</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <form>
+      <h2>Personal Details</h2>
+        <div class="form-row">
+          
+          <div class="form-group col-md-2">
+            <label for="inputName4">Full Name</label>
+            <input type="email" class="form-control" id="inputName4" placeholder="Name">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputGender4">Gender</label>
+            <!-- <input type="password" class="form-control" id="inputPassword4" placeholder="Password"> -->
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select...</option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+              <option value="3">Other</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputAddress">Date Of Birth</label>
+            <input type="Date" class="form-control" id="inputDate" placeholder="DOB">
           </div>
 
+          <div class="form-group col-md-2">
+            <label for="inputStatus4">Marital Status</label>
+            <!-- <input type="password" class="form-control" id="inputPassword4" placeholder="Password"> -->
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select...</option>
+              <option value="1">Single</option>
+              <option value="2">Married</option>
+              <option value="3">Divorced</option>
+              <option value="4">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="inputSpouse4">Name Of Spouse</label>
+            <input type="text" class="form-control" id="inputName4" placeholder="Spouse Name">
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="inputDependents4">Number of Dependents</label>
+            <input type="number" class="form-control" id="inputDependents4" placeholder="Dependents" min="0">
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="inputChildren4">Number of Children</label>
+            <input type="number" class="form-control" id="inputChildren4" placeholder="Children" min="0">
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="inputFather4">Name Of Father</label>
+            <input type="text" class="form-control" id="inputName4" placeholder="Father Name">
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="inputStatus4">Nationality</label>
+            <!-- <input type="password" class="form-control" id="inputPassword4" placeholder="Password"> -->
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select...</option>
+              <option value="1">Indian</option>
+              <option value="2">Others</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="inputStatus4">Religion</label>
+            <!-- <input type="password" class="form-control" id="inputPassword4" placeholder="Password"> -->
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select...</option>
+              <option value="1">Hindu</option>
+              <option value="2">Muslim</option>
+              <option value="3">Christian</option>
+              <option value="4">Sikh</option>
+              <option value="5">Jain</option>
+              <option value="6">Buddhist</option>
+              <option value="7">Others</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="inputStatus4">Category</label>
+            <!-- <input type="password" class="form-control" id="inputPassword4" placeholder="Password"> -->
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select...</option>
+              <option value="1">SC</option>
+              <option value="2">ST</option>
+              <option value="3">OBC</option>
+              <option value="4">GENERAL</option>
+              <option value="5">MINORITY</option>
+              <option value="6">Others</option>
+            </select>
+          </div>
           
+          <div class="form-group col-md-2">
+            <label for="inputFather4">Place Of Birth</label>
+            <input type="text" class="form-control" id="inputBirthPlace4" placeholder="Place Of Birth">
+          </div>
 
-      
+          <div class="form-group col-md-2">
+            <label for="inputAdhaar4">Adhaar Number</label>
+            <input type="text" class="form-control" id="inputAdhaar4" placeholder="Adhaar Number">
+          </div>
 
-    
-        <!-- <div class="form-page" id="page4">
-            <h2>Customer Declaration</h2>
-            
-            <button onclick="prevPage()">Previous</button>
-            <button onclick="submitForm()">Submit</button>
-        </div> -->
-        <button onclick="submitForm()">Submit</button>
-        <button ><a href="address.html">Address</a></button>
-        <section id="data-table">
-          <br>
-          <!-- <h2>Input Data Table</h2> -->
-          <table>
-              <thead>
-                  <tr>
-                      <th>Full Name</th>
-                      <th>Gender</th>
-                      <th>DOB</th>
-                      <th>Marital Status</th>
-                      <!-- <th>Name of Spouse</th> -->
-                      <th>Number of Dependents</th>
-                      <!-- <th>Number of Children</th> -->
-                      <th>Nationality</th>
-                      <!-- <th>Religion</th> -->
-                      <!-- <th>Category</th> -->
-                      <th>Aadhaar Number</th>
-                      <th>Pan Number</th>
-                      <th>Passport Number</th>
-                      <th>Voter ID</th>
-                  </tr>
-              </thead>
-              <tbody id="table-body"></tbody>
-          </table>
-      </section>
+          <div class="form-group col-md-2">
+            <label for="inputPassport4">Passport Number</label>
+            <input type="text" class="form-control" id="inputPassport4" placeholder="Passport Number">
+          </div>
 
-    </div>
-    <script src="script.js"></script>
+          <div class="form-group col-md-2">
+            <label for="inputPan4">PAN Number</label>
+            <input type="text" class="form-control" id="inputPan4" placeholder="PAN Number">
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="inputVoter4">Voter ID</label>
+            <input type="text" class="form-control" id="inputVoter4" placeholder="Voter ID">
+          </div>
+
+        </div>
+        
+          <button class="btn btn-primary" type="button"><a href="address.html">Next</a></button>
+          <!-- <button class="btn btn-primary" type="submit">Submit</button> -->
+      </form>
+      <script src=script.js></script>
 </body>
 </html>

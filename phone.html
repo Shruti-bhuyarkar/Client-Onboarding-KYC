@@ -3,57 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="phone-number-validation/build/css/demo.css">
-    <link rel="stylesheet" href="phone-number-validation/build/css/intlTelInput.css">
-    
-    
+    <title>Phone</title>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar"> 
-          <a href="index.html">Personal Details</a> 
-          <a href="Address.html">Address</a>
-          <a href="phone.html">Phone</a>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link"  href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"   href="address.html">Address</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="phone.html">Phone</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
-    </header>
-    <div class="form-container">
-        <div class="form-page active-page" id="page3">
-            <h2>Phone</h2>
-            <i class="fa-solid fa-info"></i>
-            <div class="field">
-            <div class="input-field">
-                <label for="countryCode">Country Code:</label>
-                <input type="tel" id="phone" name="countryCode" pattern="\+\d{1,9}" maxlength="4">
-            </div>
 
-            <div class="input-field">
-                <label for="phoneType">Phone Type:</label>
-                <select id="phoneType" name="phoneType">
-                    <option value="personal">Personal</option>
-                    <option value="office">Office</option>
-                    <!-- Add more phone types as needed -->
+      <form>
+        <h2>Phone</h2>
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="inputType4">Country Code</label>
+                <select class="form-select" id="CountryCode" aria-label="Default select example">
+                  <option selected>Select...</option>
+                  <option value="1">+91</option>
+                  <option value="2">+1</option>
+                  <option value="3">+23</option>
                 </select>
             </div>
-            
-            <div class="input-field">
-                <label for="phoneNumber">Phone Number:</label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10,15}" title="Please enter a valid phone number" required>
-                <!-- Use the "tel" type for better mobile keyboard support -->
-                <!-- The "pattern" attribute can be adjusted based on the expected format -->
-            </div>
-            
-        </div>
 
+            <div class="form-group col-md-2">
+                <label for="inputType4">Phone Type</label>
+                <select class="form-select" id="CountryCode" aria-label="Default select example">
+                    <option selected>Select...</option>
+                    <option value="1">Telephone</option>
+                    <option value="2">Mobile</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="inputType4">Phone Used</label>
+                <select class="form-select" id="CountryCode" aria-label="Default select example">
+                    <option selected>Select...</option>
+                    <option value="3">Office</option>
+                    <option value="4">Personal</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="inputPhone4">Phone Number</label>
+                <input type="text" class="form-control" id="Phone" placeholder="Phone Number....">
+            </div>
+                
         </div>
-    </div>
-    <script src="phone-number-validation/build/js/intlTelInput.js"></script>
-    <script>
-        var input=document.querySelector("#phone");
-        window.intlTelInput(input,{});
-    </script>
+      </form>
+
+      <button type="button" class="btn btn-primary">Submit</button>
+      <script src=script.js></script>
 </body>
 </html>
-
-
