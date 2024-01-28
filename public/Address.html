@@ -20,7 +20,7 @@
                 <a class="nav-link"  href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active"  aria-current="page" href="address.html">Address</a>
+                <a class="nav-link active"  aria-current="page" href="Address.html">Address</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="phone.html">Phone</a>
@@ -62,32 +62,17 @@
 
             <div class="form-group col-md-2">
                 <label for="country">Country</label>
-                <select id="country" onchange="updateStates()">                   
+                <select id="country" onchange="updateStates()"> 
                 </select>
-                <!-- <input type="text" class="form-control" id="Country" placeholder="Country"> -->
             </div>
 
             <div class="form-group col-md-2">
                 <label for="state">State</label>
-                <!-- <select class="form-select" id="presentState" aria-label="Default select example">
-                  <option selected>Select...</option>
-                  <option value="1">Maharashtra</option>
-                  <option value="2">Madhya Pradesh</option>
-                  <option value="3">Gujrat</option>
-                  <option value="4">Kerala</option>
-                </select> -->
                 <select id="state" onchange="updateCities()" disabled></select>
             </div>
             <div class="form-group col-md-2">
                 <label for="city">City</label>
-                <!-- <select class="form-select" id="presentCity" aria-label="Default select example">
-                  <option selected>Select...</option>
-                  <option value="1">Napur</option>
-                  <option value="2">Mumbai</option>
-                  <option value="3">Bhopal</option>
-                  <option value="4">Pune</option>
-                </select> -->
-                <select id="city" disabled></select>
+                 <select id="city" disabled></select>
             </div>
 
             <div class="form-group col-md-2">
@@ -104,7 +89,7 @@
 
         </div>
     </form>
-    <label for="sameAsPermanent">Present Address Same as Permanent Address:</label>
+    <label for="sameAsPresent">Present Address Same as Permanent Address:</label>
     
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="flexRadioDefault"  id="yesRadio">
@@ -148,30 +133,15 @@
                         <label for="country">Country</label>
                         <select id="country" onchange="updateStates()">                   
                         </select>
-                        <!-- <input type="text" class="form-control" id="Country" placeholder="Country"> -->
                     </div>
         
                     <div class="form-group col-md-2">
                         <label for="state">State</label>
-                        <!-- <select class="form-select" id="presentState" aria-label="Default select example">
-                          <option selected>Select...</option>
-                          <option value="1">Maharashtra</option>
-                          <option value="2">Madhya Pradesh</option>
-                          <option value="3">Gujrat</option>
-                          <option value="4">Kerala</option>
-                        </select> -->
                         <select id="state" onchange="updateCities()" disabled></select>
                     </div>
                     <div class="form-group col-md-2">
                         <label for="city">City</label>
-                        <!-- <select class="form-select" id="presentCity" aria-label="Default select example">
-                          <option selected>Select...</option>
-                          <option value="1">Napur</option>
-                          <option value="2">Mumbai</option>
-                          <option value="3">Bhopal</option>
-                          <option value="4">Pune</option>
-                        </select> -->
-                        <select id="city" disabled></select>
+                       <select id="city" disabled></select>
                     </div>
 
                     <div class="form-group col-md-2">
