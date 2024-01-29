@@ -14,7 +14,10 @@ const dbConfig = {
     port: 5432,
 };
 
-const dbClient = new Client(dbConfig);
+const dbClient = new Client(dbConfig); 
+
+
+
 
 // Connect to the PostgreSQL database
 dbClient.connect()
@@ -71,8 +74,17 @@ app.get('/api/cities', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-// Handle form submissions at /submitData
 
+const addressRoute = require('./routes/address');
+const personalDetailsRoute = require('./routes/personalDetails');
+const phoneRoute = require('./routes/phone');
+const masterTableRoute = require('./routes/masterTable');
+
+// Use route handlers
+app.use('/submitFormData', addressRoute);
+app.use('/submitFormData', personalDetailsRoute);
+app.use('/submitFormData', phoneRoute);
+app.use('/submitFormData', masterTableRoute);
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

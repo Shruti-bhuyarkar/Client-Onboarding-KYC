@@ -3,17 +3,35 @@ function submitForm() {
         "Full Name": document.getElementById('fullName').value,
         "Gender": document.getElementById('gender').value,
         "DOB": document.getElementById('dob').value,
-        "Marital Status": document.getElementById('maritalStatus').value,
+        "MaritalStatus ": document.getElementById('maritalStatus').value,
         "Number of Dependents": document.getElementById('dependents').value,
         "Nationality": document.getElementById('nationality').value,
-        "Aadhaar Number": document.getElementById('aadhaarNumber').value,
-        "Pan Number": document.getElementById('panNumber').value,
-        "Passport Number": document.getElementById('passportNumber').value,
-        "Voter ID": document.getElementById('voterID').value
+        "Aadhaar Number": document.getElementById('adhar').value,
+        "Pan Number": document.getElementById('pan').value,
+        "Passport Number": document.getElementById('passport').value,
+        "Voter ID": document.getElementById('voterid').value,
+        "Type Of Residence":document.getElementById('residence'),
+        "House/Flat/Apartment No. or Name": document.getElementById('house'),
+        "Area/Location":document.getElementById('area'),
+        "Country":document.getElementById('country'),
+        "State":document.getElementById('state'),
+        "City":document.getElementById('city'),
+        "Pin Code":document.getElementById('pin'),
+        "Email":document.getElementById('email'),
+        "House/Flat/Apartment No. or Name": document.getElementById('houseNumber'),
+        "Area/Location":document.getElementById('areaLocation'),
+        "Country":document.getElementById('country'),
+        "State":document.getElementById('state'),
+        "City":document.getElementById('city'),
+        "Pin Code":document.getElementById('pin'),
+        "Email":document.getElementById('email'),
+        "CountryCode":document.getElementById('CountryCode'),
+        "phoneid":document.getElementById('phoneid'),
+        "phone":document.getElementById('phone')
     };
 
     addToTable(formData);
-    resetForm();  // Optionally reset the form after submission
+    resetForm(); 
 }
 
 function addToTable(formData) {
@@ -30,18 +48,36 @@ function addToTable(formData) {
 }
 
 function resetForm() {
-    // Reset each form field as needed
-    document.getElementById('fullName').value = '';
-    document.getElementById('gender').value = 'male';
-    document.getElementById('dob').value = '';
-    document.getElementById('maritalStatus').value = 'single';
-    document.getElementById('dependents').value = '';
-    document.getElementById('nationality').value = 'us';
-    document.getElementById('aadhaarNumber').value = '';
-    document.getElementById('passportNumber').value = '';
-    document.getElementById('panNumber').value = '';
-    document.getElementById('voterID').value = '';
+  document.getElementById('fullName').value = "";
+  document.getElementById('gender').value = "";
+  document.getElementById('dob').value = "";
+  document.getElementById('maritalStatus').value = "";
+  document.getElementById('dependents').value = "";
+  document.getElementById('nationality').value = "";
+  document.getElementById('adhar').value = "";
+  document.getElementById('pan').value = "";
+  document.getElementById('passport').value = "";
+  document.getElementById('voterid').value = "";
+  document.getElementById('residence').value = ""; 
+  document.getElementById('house').value = "";
+  document.getElementById('area').value = "";
+  document.getElementById('country').value = "";
+  document.getElementById('state').value = "";
+  document.getElementById('city').value = "";
+  document.getElementById('pin').value = "";
+  document.getElementById('email').value = "";
+  document.getElementById('houseNumber').value = "";
+  document.getElementById('areaLocation').value = "";
+  document.getElementById('country').value = "";
+  document.getElementById('state').value = "";
+  document.getElementById('city').value = "";
+  document.getElementById('pin').value = "";
+  document.getElementById('email').value = "";
+  document.getElementById('CountryCode').value = "";
+  document.getElementById('phoneid').value = "";
+  document.getElementById('phone').value = "";
 }
+
 
 
 
@@ -142,3 +178,21 @@ document.addEventListener('DOMContentLoaded', () => {
     stateSelect.addEventListener('change', updateCities);
   });
   
+
+  // Make a POST request to your server
+  fetch('/masterTable', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+})
+.then(response => response.json())
+.then(data => {
+    console.log('Success:', data);
+    // Optionally, you can handle success in the client-side as well
+})
+.catch((error) => {
+    console.error('Error:', error);
+    // Optionally, you can handle errors in the client-side as well
+});

@@ -30,7 +30,7 @@
         <h2>Phone</h2>
         <div class="form-row">
             <div class="form-group col-md-2">
-                <label for="inputType4">Country Code</label>
+                <label for="CountryCode">Country Code</label>
                 <select class="form-select" id="CountryCode" aria-label="Default select example">
                   <option selected>Select...</option>
                   <option value="1">+91</option>
@@ -40,8 +40,8 @@
             </div>
 
             <div class="form-group col-md-2">
-                <label for="inputType4">Phone Type</label>
-                <select class="form-select" id="CountryCode" aria-label="Default select example">
+                <label for="phonetype">Phone Type</label>
+                <select class="form-select" id="phonetype" aria-label="Default select example">
                     <option selected>Select...</option>
                     <option value="1">Telephone</option>
                     <option value="2">Mobile</option>
@@ -49,8 +49,8 @@
             </div>
 
             <div class="form-group col-md-2">
-                <label for="inputType4">Phone Used</label>
-                <select class="form-select" id="CountryCode" aria-label="Default select example">
+                <label for="phoneid">Phone Used</label>
+                <select class="form-select" id="phoneid" aria-label="Default select example">
                     <option selected>Select...</option>
                     <option value="3">Office</option>
                     <option value="4">Personal</option>
@@ -58,14 +58,14 @@
             </div>
 
             <div class="form-group col-md-2">
-                <label for="inputPhone4">Phone Number</label>
-                <input type="text" class="form-control" id="Phone" placeholder="Phone Number....">
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control" id="phone" placeholder="Phone Number....">
             </div>
                 
         </div>
       </form>
 
-      <button type="button" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
       <script src=script.js></script>
 </body>
 </html>
