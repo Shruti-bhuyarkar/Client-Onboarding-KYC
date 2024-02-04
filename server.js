@@ -75,16 +75,16 @@ app.get('/api/cities', async (req, res) => {
     }
 });
 
-const addressRoute = require('./routes/address');
-const personalDetailsRoute = require('./routes/personalDetails');
-const phoneRoute = require('./routes/phone');
-const masterTableRoute = require('./routes/masterTable');
+const address = require('./routes/address');
+const personalDetails = require('./routes/personalDetails');
+const phone = require('./routes/phone');
+const masterTable = require('./routes/masterTable');
 
 // Use route handlers
-app.use('/submitFormData', addressRoute);
-app.use('/submitFormData', personalDetailsRoute);
-app.use('/submitFormData', phoneRoute);
-app.use('/submitFormData', masterTableRoute);
+app.use('/submitFormData/personalDetails', personalDetails);
+app.use('/submitFormData/address', address);
+app.use('/submitFormData/phone', phone);
+app.use('/submitFormData/masterTable', masterTable);
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

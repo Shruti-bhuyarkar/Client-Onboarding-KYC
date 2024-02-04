@@ -11,7 +11,7 @@ const pool = new Pool({
     port: 5432,
 });
 // Endpoint to handle data submission to master table
-router.post('/masterTable', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const client = await pool.connect();
 
@@ -21,7 +21,7 @@ router.post('/masterTable', async (req, res) => {
 
         // Perform database operation to insert data into master table
         await client.query(
-            'INSERT INTO master_table (full_name, gender, dob, marital_status,spouse_name, dependents, children, father_name, nationality, religion, category, place_of_birth, aadhar_number, passport_number, voter_id, residence_type, house_number, area_location, country, state, city, pincode, email,country_code, phpne_type, phone1_id, phone ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27)',
+            'INSERT INTO master_data (full_name, gender, dob, marital_status,spouse_name, dependents, children, father_name, nationality, religion, category, place_of_birth, aadhaar_number, passport_number, pan_number, voter_id, residence_type, house_number, area_location, country, state, city, pincode, email,country_code, phone_type, phone1_id, phone ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28)',
             [fullName, gender, dob, maritalStatus, spouse, dependents, children, father, nationality, religion, category, birthplace, adhar, passport, pan, voterid,  residence, house, area, country, state, city, pin, email, countryCode, phonetype,  phoneid, phone]
         );
 

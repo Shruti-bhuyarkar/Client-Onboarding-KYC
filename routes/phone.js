@@ -11,7 +11,7 @@ const pool = new Pool({
 });
 
 // Endpoint to handle data submission to phone table
-router.post('/phone', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const client = await pool.connect();
 
@@ -19,8 +19,8 @@ router.post('/phone', async (req, res) => {
 
         // Perform database operation to insert data into phone table
         await client.query(
-            'INSERT INTO phone (country_code, phpne_type, phone1_id, phone ) VALUES ($1, $2, $3, $4)',
-            [countryCode, phonetype,  phoneid, phone ]
+            'INSERT INTO phone (country_code, phone_type, phone1_id, phone_number ) VALUES ($1, $2, $3, $4)',
+            [ countryCode, phonetype,  phoneid, phone ]
         );
 
         client.release();

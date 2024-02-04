@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +8,42 @@
     <link rel="stylesheet" href="style.css">
     <title>Address</title>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-         
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link"  href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active"  aria-current="page" href="Address.html">Address</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="phone.html">Phone</a>
-              </li>
-             
-            </ul>
-          </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Address.html">Address</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="phone.html">Phone</a>
+                    </li>
+
+                </ul>
+            </div>
         </div>
-      </nav>
+    </nav>
 
 
-      
-      <form>
+
+    <form>
         <h2>Present Address</h2>
         <div class="form-row">
 
             <div class="form-group col-md-2">
                 <label for="residence">Type Of Residence</label>
                 <select class="form-select" id="residence" aria-label="Default select example">
-                  <option selected>Select...</option>
-                  <option value="1">Owned</option>
-                  <option value="2">Rented</option>
-                  <option value="3">Allotted to Employer</option>
-                  <option value="4">Others</option>
+                    <option selected>Select...</option>
+                    <option value="1">Owned</option>
+                    <option value="2">Rented</option>
+                    <option value="3">Allotted to Employer</option>
+                    <option value="4">Others</option>
                 </select>
             </div>
 
@@ -57,7 +59,7 @@
 
             <div class="form-group col-md-2">
                 <label for="country">Country</label>
-                <select id="country" onchange="updateStates()"> 
+                <select id="country" onchange="updateStates()">
                 </select>
             </div>
 
@@ -67,12 +69,13 @@
             </div>
             <div class="form-group col-md-2">
                 <label for="city">City</label>
-                 <select id="city" disabled></select>
+                <select id="city" disabled></select>
             </div>
 
             <div class="form-group col-md-2">
                 <label for="pin">Pin Code</label>
-                <input type="text" class="form-control" id="pin" placeholder="Pin Code" pattern="[0-9]{6}" maxlength="6">
+                <input type="text" class="form-control" id="pin" placeholder="Pin Code" pattern="[0-9]{6}"
+                    maxlength="6">
             </div>
 
             <div class="form-group col-md-2">
@@ -80,13 +83,13 @@
                 <input type="email" class="form-control" id="email" placeholder="Email">
             </div>
 
-            
+
 
         </div>
     </form>
     <label for="sameAsPresent">Present Address Same as Permanent Address:</label>
-    
-            <div class="form-check">
+
+    <div class="form-check">
                 <input class="form-check-input" type="radio" name="flexRadioDefault"  id="yesRadio">
                 <label class="form-check-label" for="flexRadioDefault1">
                     Yes
@@ -98,66 +101,69 @@
                     No
                 </label>
             </div>
+   
 
-            <form>
-                <h2>Permanent Address</h2>
-                <div class="form-row">
-        
-                    <div class="form-group col-md-2">
-                        <label for="inputType4">Type Of Residence</label>
-                        <select class="form-select" id="residenceType" aria-label="Default select example">
-                          <option selected>Select...</option>
-                          <option value="1">Owned</option>
-                          <option value="2">Rented</option>
-                          <option value="3">Allotted to Employer</option>
-                          <option value="4">Others</option>
-                        </select>
-                    </div>
-        
-                    <div class="form-group col-md-2">
-                        <label for="inputHouse4">House/Flat/Apartment No. or Name:</label>
-                        <input type="text" class="form-control" id="houseNumber" placeholder="House">
-                    </div>
-        
-                    <div class="form-group col-md-2">
-                        <label for="inputArea4">Area/Location</label>
-                        <input type="text" class="form-control" id="areaLocation" placeholder="Area">
-                    </div>
-        
-                    <div class="form-group col-md-2">
-                        <label for="country">Country</label>
-                        <select id="country" onchange="updateStates()">                   
-                        </select>
-                    </div>
-        
-                    <div class="form-group col-md-2">
-                        <label for="state">State</label>
-                        <select id="state" onchange="updateCities()" disabled></select>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="city">City</label>
-                       <select id="city" disabled></select>
-                    </div>
+    <form>
+        <h2>Permanent Address</h2>
+        <div class="form-row">
 
-                    <div class="form-group col-md-2">
-                        <label for="inputPin4">Pin Code</label>
-                        <input type="text" class="form-control" id="pin" placeholder="Pin Code" pattern="[0-9]{6}" maxlength="6">
-                    </div>
-        
-                    <div class="form-group col-md-2">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email">
-                    </div>
-        
-                    
-        
-                </div>
-            </form>
-            
-            <button type="button" class="btn btn-primary" onclick="address()"><a href="phone.html">Next</a></button>
+            <div class="form-group col-md-2">
+                <label for="inputType4">Type Of Residence</label>
+                <select class="form-select" id="residenceType" aria-label="Default select example">
+                    <option selected>Select...</option>
+                    <option value="1">Owned</option>
+                    <option value="2">Rented</option>
+                    <option value="3">Allotted to Employer</option>
+                    <option value="4">Others</option>
+                </select>
+            </div>
 
-            
-    
-            <script src=script.js></script>
+            <div class="form-group col-md-2">
+                <label for="inputHouse4">House/Flat/Apartment No. or Name:</label>
+                <input type="text" class="form-control" id="houseNumber" placeholder="House">
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="inputArea4">Area/Location</label>
+                <input type="text" class="form-control" id="areaLocation" placeholder="Area">
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="country">Country</label>
+                <select id="country" onchange="updateStates()">
+                </select>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="state">State</label>
+                <select id="state" onchange="updateCities()" disabled></select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="city">City</label>
+                <select id="city" disabled></select>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="inputPin4">Pin Code</label>
+                <input type="text" class="form-control" id="pin" placeholder="Pin Code" pattern="[0-9]{6}"
+                    maxlength="6">
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+
+
+
+        </div>
+    </form>
+
+    <button type="button" class="btn btn-primary"><a href="phone.html">Next</a></button>
+
+
+
+    <script src="script.js"></script>
 </body>
+
 </html>
