@@ -10,6 +10,7 @@ const pool = new Pool({
     port: 5432,
 });
 
+
 // Endpoint to handle data submission to phone table
 router.post('/', async (req, res) => {
     try {

@@ -9,6 +9,7 @@ const pool = new Pool({
     password: '1003',
     port: 5432,
 });
+
 // Endpoint to handle data submission to personal details table
 router.post('/', async (req, res) => {
     try {

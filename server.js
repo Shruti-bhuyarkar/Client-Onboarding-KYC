@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const { Client } = require('pg');
 const app = express();
@@ -15,9 +14,6 @@ const dbConfig = {
 };
 
 const dbClient = new Client(dbConfig); 
-
-
-
 
 // Connect to the PostgreSQL database
 dbClient.connect()

@@ -12,86 +12,93 @@ function submitForm() {
     "Pan Number": document.getElementById('pan').value,
     "Passport Number": document.getElementById('passport').value,
     "Voter ID": document.getElementById('voterid').value,
-    "Type Of Residence": document.getElementById('residence'),
-    "House/Flat/Apartment No. or Name": document.getElementById('house'),
-    "Area/Location": document.getElementById('area'),
-    "Country": document.getElementById('country'),
-    "State": document.getElementById('state'),
-    "City": document.getElementById('city'),
-    "Pin Code": document.getElementById('pin'),
-    "Email": document.getElementById('email'),
-    "House/Flat/Apartment No. or Name": document.getElementById('houseNumber'),
-    "Area/Location": document.getElementById('areaLocation'),
-    "Country": document.getElementById('country'),
-    "State": document.getElementById('state'),
-    "City": document.getElementById('city'),
-    "Pin Code": document.getElementById('pin'),
-    "Email": document.getElementById('email'),
-    "CountryCode": document.getElementById('CountryCode'),
-    "phoneid": document.getElementById('phoneid'),
-    "phone": document.getElementById('phone')
+    "Type Of Residence": document.getElementById('residence').value,
+    "House/Flat/Apartment No. or Name": document.getElementById('house').value,
+    "Area/Location": document.getElementById('area').value,
+    "Country": document.getElementById('country').value,
+    "State": document.getElementById('state').value,
+    "City": document.getElementById('city').value,
+    "Pin Code": document.getElementById('pin').value,
+    "Email": document.getElementById('email').value,
+    "House/Flat/Apartment No. or Name": document.getElementById('houseNumber').value,
+    "Area/Location": document.getElementById('areaLocation').value,
+    "Country": document.getElementById('country').value,
+    "State": document.getElementById('state').value,
+    "City": document.getElementById('city').value,
+    "Pin Code": document.getElementById('pin').value,
+    "Email": document.getElementById('email').value,
+    "CountryCode": document.getElementById('CountryCode').value,
+    "phoneid": document.getElementById('phoneid').value,
+    "phone": document.getElementById('phone').value
   };
   resetForm();
+  sendData('/submitFormData/personalDetails', formData);
+  sendData('/submitFormData/address', formData);
+  sendData('/submitFormData/phone', formData);
+  sendData('/submitFormData/masterTable', formData);
 }
 
+// function resetForm() {
+  // document.getElementById('fullName').value = "";
+  // document.getElementById('gender').value = "";
+  // document.getElementById('dob').value = "";
+  // document.getElementById('maritalStatus').value = "";
+  // document.getElementById('dependents').value = "";
+  // document.getElementById('nationality').value = "";
+  // document.getElementById('adhar').value = "";
+  // document.getElementById('pan').value = "";
+  // document.getElementById('passport').value = "";
+  // document.getElementById('voterid').value = "";
+  // document.getElementById('residence').value = "";
+  // document.getElementById('house').value = "";
+  // document.getElementById('area').value = "";
+  // document.getElementById('country').value = "";
+  // document.getElementById('state').value = "";
+  // document.getElementById('city').value = "";
+  // document.getElementById('pin').value = "";
+  // document.getElementById('email').value = "";
+  // document.getElementById('houseNumber').value = "";
+  // document.getElementById('areaLocation').value = "";
+  // document.getElementById('country').value = "";
+  // document.getElementById('state').value = "";
+  // document.getElementById('city').value = "";
+  // document.getElementById('pin').value = "";
+  // document.getElementById('email').value = "";
+  // document.getElementById('CountryCode').value = "";
+  // document.getElementById('phoneid').value = "";
+  // document.getElementById('phone').value = "";
+// }
 function resetForm() {
-  document.getElementById('fullName').value = "";
-  document.getElementById('gender').value = "";
-  document.getElementById('dob').value = "";
-  document.getElementById('maritalStatus').value = "";
-  document.getElementById('dependents').value = "";
-  document.getElementById('nationality').value = "";
-  document.getElementById('adhar').value = "";
-  document.getElementById('pan').value = "";
-  document.getElementById('passport').value = "";
-  document.getElementById('voterid').value = "";
-  document.getElementById('residence').value = "";
-  document.getElementById('house').value = "";
-  document.getElementById('area').value = "";
-  document.getElementById('country').value = "";
-  document.getElementById('state').value = "";
-  document.getElementById('city').value = "";
-  document.getElementById('pin').value = "";
-  document.getElementById('email').value = "";
-  document.getElementById('houseNumber').value = "";
-  document.getElementById('areaLocation').value = "";
-  document.getElementById('country').value = "";
-  document.getElementById('state').value = "";
-  document.getElementById('city').value = "";
-  document.getElementById('pin').value = "";
-  document.getElementById('email').value = "";
-  document.getElementById('CountryCode').value = "";
-  document.getElementById('phoneid').value = "";
-  document.getElementById('phone').value = "";
+  var formElements = document.querySelectorAll('input, select');
+  formElements.forEach(function (element) {
+    element.value = "";
+  });
 }
-
-
-
 
 function copyPresentAddress() {
-  var permanentFields = ["residenceType", "houseNumber", "areaLocation", "country", "state", "city", "pin", "email"];
-  var presentFields = ["presentResidenceType", "presentHouseNumber", "presentAreaLocation", "presentLandmark", "presentState", "presentCity", "presentPin", "presentEmail"];
-
-  var yesRadio = document.getElementById("yesRadio");
-  console.log(yesRadio);
-  yesRadio.addEventListener("change", function () {
-    if (this.checked) {
-      for (var i = 0; i < permanentFields.length; i++) {
-        var permanentValue = document.getElementById(presentFields[i]).value.trim();
-        console.log(permanentValue);
-        document.getElementById(permanentFields[i]).value = permanentValue;
-      }
-    }
-  });
-  console.log(document.getElementById('state').selectedIndex);
+  // Check if the checkbox is checked
+  var checkbox = document.getElementById('sameAsPresentCheckbox');
+  if (checkbox.checked) {
+    // If checked, copy values from present address fields to permanent address fields
+    var presentAddressValue = document.getElementById('presentAddress').value.trim();
+    document.getElementById('permanentAddress').value = presentAddressValue;
+  }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('sameAsPresentCheckbox').addEventListener('change', function () {
+    copyPresentAddress();
+  });
 
-document.addEventListener("DOMContentLoaded", function () {
+  const countrySelect = document.getElementById('country');
+  const stateSelect = document.getElementById('state');
+  const citySelect = document.getElementById('city');
 
-  copyPresentAddress();
+  // ... (rest of your code for populating dropdowns)
+
+  countrySelect.addEventListener('change', updateStates);
+  stateSelect.addEventListener('change', updateCities);
 });
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const countrySelect = document.getElementById('country');
