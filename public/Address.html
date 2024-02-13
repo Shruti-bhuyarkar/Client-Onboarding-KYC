@@ -82,71 +82,10 @@
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" placeholder="Email">
             </div>
-
-
-
         </div>
     </form>
-    <label for="checkoutButton">Present Address Same as Permanent Address:</label>
-    <button type="button" id="checkoutButton">Checkout</button>
-
-    <form>
-        <h2>Permanent Address</h2>
-        <div class="form-row">
-
-            <div class="form-group col-md-2">
-                <label for="residenceType">Type Of Residence</label>
-                <select class="form-select" id="residenceType" aria-label="Default select example">
-                    <option selected>Select...</option>
-                    <option value="1">Owned</option>
-                    <option value="2">Rented</option>
-                    <option value="3">Allotted to Employer</option>
-                    <option value="4">Others</option>
-                </select>
-            </div>
-
-            <div class="form-group col-md-2">
-                <label for="inputHouse4">House/Flat/Apartment No. or Name:</label>
-                <input type="text" class="form-control" id="houseNumber" placeholder="House">
-            </div>
-
-            <div class="form-group col-md-2">
-                <label for="inputArea4">Area/Location</label>
-                <input type="text" class="form-control" id="areaLocation" placeholder="Area">
-            </div>
-
-            <div class="form-group col-md-2">
-                <label for="country">Country</label>
-                <select id="country" onchange="updateStates()">
-                </select>
-            </div>
-
-            <div class="form-group col-md-2">
-                <label for="state">State</label>
-                <select id="state" onchange="updateCities()" disabled></select>
-            </div>
-            <div class="form-group col-md-2">
-                <label for="city">City</label>
-                <select id="city" disabled></select>
-            </div>
-
-            <div class="form-group col-md-2">
-                <label for="inputPin4">Pin Code</label>
-                <input type="text" class="form-control" id="pin" placeholder="Pin Code" pattern="[0-9]{6}"
-                    maxlength="6">
-            </div>
-
-            <div class="form-group col-md-2">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Email">
-            </div>
-
-
-
-        </div>
-    </form>
-
-    <button type="button" class="btn btn-primary"><a href="phone.html">Next</a></button>
+    <button type="button" class="btn btn-warning">Update</button>
+    <button type="button" class="btn btn-primary" onclick="address()"><a href="phone.html">Save & Next</a></button>
 
 
 

@@ -84,39 +84,17 @@ input, select {
     box-sizing: border-box;
 }
 
-
-/* .hidden {
-    display: none;
-} */
-
-/* .form-check-input{
-    width: 10px;;
-}
-.form-group input{
-    padding: 4px 0;
-} */
-
-/* table, th,td {
-    border:1px solid black;
+.btn-warning {
+    color: #ffffff;
+    background-color: #055a30;
+    border-color: #055a30;
+    
   }
 
-  table{
-    width: 100%;
-  } */
-
-/* button {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-} */
-
+  .btn-warning:hover{
+    background-color: #083e23;
+    color: #ffffff;
+  }
 #minorityDetails {
     margin-top: 10px;
 }

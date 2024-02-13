@@ -32,4 +32,18 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.get('/', async (req, res) => {
+    try {
+        const client = await pool.connect();
+        const result = await client.query('SELECT * FROM address');
+        const address = result.rows;
+        res.json(address);
+        client.release();
+    } catch (error) {
+        console.error('Error fetching data from address table:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+}
+)
+
 module.exports = router;
