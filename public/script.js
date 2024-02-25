@@ -1,233 +1,85 @@
-var pdData
-var addressData
-var phoneData
+const submitButton = document.getElementById('submitButtton');
 
-function pd() {
-  pdData = {
-    "Full Name": document.getElementById('fullName').value,
-    "Gender": document.getElementById('gender').value,
-    "DOB": document.getElementById('dob').value,
-    "MaritalStatus ": document.getElementById('maritalStatus').value,
-    "Number of Dependents": document.getElementById('dependents').value,
-    "Nationality": document.getElementById('nationality').value,
-    "Aadhaar Number": document.getElementById('adhar').value,
-    "Pan Number": document.getElementById('pan').value,
-    "Passport Number": document.getElementById('passport').value,
-    "Voter ID": document.getElementById('voterid').value
-  }
-};
+submitButton.addEventListener('click', async function submitForm(e) {
+  e.preventDefault();
+    const full_name = document.getElementById('fullName').value;
+    const gender=document.getElementById('gender').value
+    const dob=document.getElementById('dob').value
+    const marital_status=document.getElementById('maritalStatus').value
+    const spouse_name=document.getElementById('Spouse').value
+    const dependents=document.getElementById('dependents').value
+    const children=document.getElementById('children').value
+    const father_name=document.getElementById('father').value
+    const religion=document.getElementById('religion').value
+    const category=document.getElementById('category').value
+    const place_of_birth=document.getElementById('birthplace').value
+    const nationality=document.getElementById('nationality').value
+    const aadhaar_number=document.getElementById('adhar').value
+    const pan_number=document.getElementById('pan').value
+    const passport_number=document.getElementById('passport').value
+    const voter_id=document.getElementById('voterid').value
 
-function address() {
-  addressData = {
-    "Type Of Residence": document.getElementById('residence').value,
-    "House/Flat/Apartment No. or Name": document.getElementById('house').value,
-    "Area/Location": document.getElementById('area').value,
-    "Country": document.getElementById('country').value,
-    "State": document.getElementById('state').value,
-    "City": document.getElementById('city').value,
-    "Pin Code": document.getElementById('pin').value,
-    "Email": document.getElementById('email').value
-  }
-};
-
-function phone() {
-  phoneData = {
-    "CountryCode": document.getElementById('CountryCode').value,
-    "phonetype": document.getElementById('phonetype').value,
-    "phone1id": document.getElementById('phone1id').value,
-    "phone": document.getElementById('phone').value
-  }
-};
-function formData() {
-  pd();
-  address();
-  phone();
-};
-
-function submitForm() {
-  resetForm();
-  sendData('/submitFormData/personalDetails', pdData);
-  sendData('/submitFormData/address', addressData);
-  sendData('/submitFormData/phone', phoneData);
-  sendData('/submitFormData/masterTable', formData);
-};
+      const personalDetailsData = {
+      full_name,
+      gender,
+      dob,
+      marital_status,
+      spouse_name,
+      dependents,
+      children,
+      father_name,
+      nationality,
+      religion,
+      category,
+      place_of_birth,
+      aadhaar_number,
+      passport_number,
+      pan_number,
+      voter_id
+  };
 
 
+  const personalJsonData = JSON.stringify(personalDetailsData);
+  console.log(personalJsonData);
 
+  const country_code = document.getElementById('CountryCode').value;
+  const phone_type = document.getElementById('phonetype').value;
+  const phone1_id = document.getElementById('phoneid').value;
+  const phone_number = document.getElementById('phone').value;
+  const personal_details_id = 1;
+    const phoneData = {
+      personal_details_id,
+      country_code,
+      phone_type,
+      phone1_id,
+      phone_number
+  };
 
-// function resetForm() {
-// document.getElementById('fullName').value = "";
-// document.getElementById('gender').value = "";
-// document.getElementById('dob').value = "";
-// document.getElementById('maritalStatus').value = "";
-// document.getElementById('dependents').value = "";
-// document.getElementById('nationality').value = "";
-// document.getElementById('adhar').value = "";
-// document.getElementById('pan').value = "";
-// document.getElementById('passport').value = "";
-// document.getElementById('voterid').value = "";
-// document.getElementById('residence').value = "";
-// document.getElementById('house').value = "";
-// document.getElementById('area').value = "";
-// document.getElementById('country').value = "";
-// document.getElementById('state').value = "";
-// document.getElementById('city').value = "";
-// document.getElementById('pin').value = "";
-// document.getElementById('email').value = "";
-// document.getElementById('houseNumber').value = "";
-// document.getElementById('areaLocation').value = "";
-// document.getElementById('country').value = "";
-// document.getElementById('state').value = "";
-// document.getElementById('city').value = "";
-// document.getElementById('pin').value = "";
-// document.getElementById('email').value = "";
-// document.getElementById('CountryCode').value = "";
-// document.getElementById('phoneid').value = "";
-// document.getElementById('phone').value = "";
-// }
-function resetForm() {
-  var formElements = document.querySelectorAll('input, select');
-  formElements.forEach(function (element) {
-    element.value = "";
-  });
-}
+  const phoneJsonData = JSON.stringify(phoneData);
+  console.log(phoneJsonData);
 
-document.addEventListener('DOMContentLoaded', () => {
-  const countrySelect = document.getElementById('country');
-  const stateSelect = document.getElementById('state');
-  const citySelect = document.getElementById('city');
+  const residence = document.getElementById('residence').value;
+  const house = document.getElementById('house').value;
+  const area = document.getElementById('area').value;
+  const country = document.getElementById('country').value;
+  const state = document.getElementById('state').value;
+  const city = document.getElementById('city').value;
+  const pin = document.getElementById('pin').value;
+  const email = document.getElementById('email').value;
+  const pd_id = 1;
+  const addressData = {
+      pd_id,
+      residence,
+      house,
+      area,
+      country,
+      state,
+      city,
+      pin,
+      email
+  };
 
-  // Function to populate options in a select element
-  function populateOptions(element, options) {
-    element.innerHTML = "";
-    options.forEach(option => {
-      const optionElement = document.createElement('option');
-      optionElement.value = option;
-      optionElement.text = option;
-      element.add(optionElement);
-    });
-  }
+  const addressJsonData = JSON.stringify(addressData);
+  console.log(addressJsonData);
 
-  // Function to update states based on the selected country
-  async function updateStates() {
-    const selectedCountry = countrySelect.value;
-    stateSelect.disabled = true;
-    citySelect.disabled = true;
-
-    if (selectedCountry) {
-      try {
-        const response = await fetch(`/api/states?country=${selectedCountry}`);
-        const states = await response.json();
-        populateOptions(stateSelect, states);
-        stateSelect.disabled = false;
-        updateCities();
-      } catch (error) {
-        console.error('Error fetching states:', error);
-      }
-    } else {
-      // If no country is selected, clear both state and city
-      populateOptions(stateSelect, []);
-      populateOptions(citySelect, []);
-    }
-  }
-
-  // Function to update cities based on the selected state
-  async function updateCities() {
-    const selectedState = stateSelect.value;
-    citySelect.disabled = true;
-
-    if (selectedState) {
-      try {
-        const response = await fetch(`/api/cities?state=${selectedState}`);
-        const cities = await response.json();
-        populateOptions(citySelect, cities);
-        citySelect.disabled = false;
-      } catch (error) {
-        console.error('Error fetching cities:', error);
-      }
-    } else {
-      // If no state is selected, clear the city
-      populateOptions(citySelect, []);
-    }
-  }
-
-  // Initial population of the country dropdown
-  fetch('/api/countries')
-    .then(response => response.json())
-    .then(countries => {
-      populateOptions(countrySelect, countries);
-    })
-    .catch(error => console.error('Error fetching countries:', error));
-
-  // Event listeners for country and state changes
-  countrySelect.addEventListener('change', updateStates);
-  stateSelect.addEventListener('change', updateCities);
 });
-
-
-// Make a POST request to your server
-fetch('/submitFormData/personalDetails', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(formData)
-})
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
-
-fetch('/submitFormData/address', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(formData)
-})
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
-
-
-fetch('/submitFormData/phone', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(formData)
-})
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
-
-
-fetch('/submitFormData/masterTable', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(formData)
-})
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
-
-
-
-

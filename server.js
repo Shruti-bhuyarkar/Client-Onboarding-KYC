@@ -1,3 +1,4 @@
+// server.js
 const express = require('express');
 const { Client } = require('pg');
 const app = express();
@@ -15,6 +16,9 @@ const dbConfig = {
 
 const dbClient = new Client(dbConfig); 
 
+
+
+
 // Connect to the PostgreSQL database
 dbClient.connect()
     .then(() => console.log('Connected to the database'))
@@ -27,9 +31,36 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // Serve the HTML page at the root
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+app.get('/personal', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
+app.get('/address',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public/address.html'));
+})
+
+app.get('/phone',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public/phone.html'));
+}
+
+)
+
+app.get('/users',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public/users.html'));
+})
+
+app.get('/personal/:id', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index2.0.html'));
+}
+);
+
+app.get('/address/:id', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/address2.0.html'));
+}
+);
+app.get('/phone/:id', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/phone2.0.html'));
+}
+);
 
 // API endpoint to get countries
 app.get('/api/countries', async (req, res) => {
